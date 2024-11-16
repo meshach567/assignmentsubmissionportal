@@ -21,7 +21,7 @@ const getAssignmentForAdmin = async (req, res) => {
     }
 }
 
-const acceptAssignmentByAdmin = async (req, res) => {
+const acceptAssignmentForAdmin = async (req, res) => {
     try {
         await Admin.findByIdAndUpdate(req.params.id, { status: 'Accepted' });
         res.json({ message: 'Assignment accepted' });
@@ -30,7 +30,7 @@ const acceptAssignmentByAdmin = async (req, res) => {
     }
 }
 
-const rejectAssignmentByAdmin = async (req, res) => {
+const rejectAssignmentForAdmin = async (req, res) => {
     try {
         await Assignment.findByIdAndUpdate(req.params.id, { status: 'Rejected' });
         res.json({ message: 'Assignment rejected' });
@@ -42,7 +42,7 @@ const rejectAssignmentByAdmin = async (req, res) => {
 module.exports = {
     uploadAssignmentForAdmin,
     getAssignmentForAdmin,
-    acceptAssignmentByAdmin,
-    rejectAssignmentByAdmin
+    acceptAssignmentForAdmin,
+    rejectAssignmentForAdmin
 }
 
